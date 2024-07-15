@@ -93,7 +93,7 @@ const NavigationBar = () => {
 						<Link
 							color={index === 2 ? "primary" : "foreground"}
 							className="w-full"
-							href="#"
+							href={index === 0 ? "/" : index === 2 ? "/" : "/"}
 							size="lg">
 							{item}
 						</Link>

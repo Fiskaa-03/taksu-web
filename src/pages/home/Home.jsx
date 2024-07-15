@@ -1,12 +1,22 @@
+import { useState, useEffect } from "react";
 import classes from "./Home.module.css";
-import { Image } from "@nextui-org/react";
+import { Image, Avatar, Link } from "@nextui-org/react";
 import ScrollAnimation from "react-animate-on-scroll";
 import SectionHeader from "../../components/SectionHeader";
 import GeneralCard from "../../components/GeneralCard";
 import BlogCard from "../../components/BlogCard";
+import Data from "../../Data";
 
 const Home = () => {
-	const publishDate = new Date("2024-07-02 14:12:10");
+	const [blogs, setBlogs] = useState([]);
+
+	const getBlogs = () => {
+		setBlogs(Data);
+	};
+	useEffect(() => {
+		getBlogs();
+	});
+
 	return (
 		<div>
 			<div className={classes.banner}>
@@ -62,7 +72,7 @@ const Home = () => {
 							description="Memastikan setiap pertunjukan dari penari yang berpengalaman dan berbakat. "
 							color="white"
 						/>
-						<div className="flex">
+						<div className="flex max-md:hidden">
 							<div className="my-4 w-2 h-2 bg-white rounded-xl"></div>
 							<div className="my-4 mx-2 w-2 h-2 bg-white rounded-xl"></div>
 							<div className="my-4 w-2 h-2 bg-white rounded-xl"></div>
@@ -73,7 +83,7 @@ const Home = () => {
 							description="Menawarkan layanan yang dapat disesuaikan dengan keinginan dan kebutuhan Anda"
 							color="white"
 						/>
-						<div className="flex">
+						<div className="flex max-md:hidden">
 							<div className="my-4 w-2 h-2 bg-white rounded-xl"></div>
 							<div className="my-4 mx-2 w-2 h-2 bg-white rounded-xl"></div>
 							<div className="my-4 w-2 h-2 bg-white rounded-xl"></div>
@@ -102,7 +112,7 @@ const Home = () => {
 							description="Pilih beragam layanan yang ingin kamu pesan!"
 							color="primary"
 						/>
-						<div className="flex">
+						<div className="flex max-md:hidden">
 							<div className="my-4 w-2 h-2 bg-primary rounded-xl"></div>
 							<div className="my-4 mx-2 w-2 h-2 bg-primary rounded-xl"></div>
 							<div className="my-4 w-2 h-2 bg-primary rounded-xl"></div>
@@ -113,7 +123,7 @@ const Home = () => {
 							description="Diskusikan acara yang ingin kamu adakan bersama professional"
 							color="primary"
 						/>
-						<div className="flex">
+						<div className="flex max-md:hidden">
 							<div className="my-4 w-2 h-2 bg-primary rounded-xl"></div>
 							<div className="my-4 mx-2 w-2 h-2 bg-primary rounded-xl"></div>
 							<div className="my-4 w-2 h-2 bg-primary rounded-xl"></div>
@@ -132,14 +142,57 @@ const Home = () => {
 				<div className="my-20 container w-500 mx-auto" id="blog">
 					<SectionHeader title="Blog Terbaru" description="" color="primary" />
 					<div className="flex items-center justify-around flex-wrap">
-						<BlogCard
-							id={1}
-							category={"Berita Terkini"}
-							image={"./assets/blog/tari-kecak.png"}
-							name={"Tari Kecak menjadi salah satu seni terbaik di dunia"}
-							publishDate={publishDate}
-							visit={5122}
-						/>
+						{blogs.map((blog) => {
+							return (
+								<BlogCard
+									key={blog.id}
+									id={blog.id}
+									category={blog.category}
+									image={blog.image}
+									title={blog.title}
+									publishDate={blog.publishDate}
+									visit={blog.visit}
+								/>
+							);
+						})}
+					</div>
+				</div>
+			</ScrollAnimation>
+
+			<ScrollAnimation animateIn="fadeIn">
+				<div className="container w-500 mx-auto" id="blog">
+					<SectionHeader title="Mitra Kami" description="" color="primary" />
+					<div className="flex items-center justify-around flex-wrap mt-10">
+						<Link href="#">
+							<Avatar
+								src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+								className="w-40 h-40 mx-10 my-5"
+							/>
+						</Link>
+						<Link href="#">
+							<Avatar
+								src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+								className="w-40 h-40 mx-10 my-5"
+							/>
+						</Link>
+						<Link href="#">
+							<Avatar
+								src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+								className="w-40 h-40 mx-10 my-5"
+							/>
+						</Link>
+						<Link href="#">
+							<Avatar
+								src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+								className="w-40 h-40 mx-10 my-5"
+							/>
+						</Link>
+						<Link href="#">
+							<Avatar
+								src="https://i.pravatar.cc/150?u=a04258114e29026708c"
+								className="w-40 h-40 mx-10 my-5"
+							/>
+						</Link>
 					</div>
 				</div>
 			</ScrollAnimation>

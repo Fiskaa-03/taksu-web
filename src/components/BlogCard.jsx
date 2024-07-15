@@ -13,42 +13,20 @@ import {
 	Image,
 } from "@nextui-org/react";
 
-const BlogCard = ({ id, image, name, category, publishDate, visit }) => {
-	const month = publishDate.toLocaleString("default", {
-		month: "short",
-	});
-	const minutes = publishDate.getUTCMinutes().toString().padStart(2, "0");
-	const date = `${publishDate.getUTCDate()} / ${month} / ${publishDate.getUTCFullYear()}`;
-	const time = `${publishDate.getUTCHours()}:${minutes}`;
-
+const BlogCard = ({ id, image, title, category, publishDate, visit }) => {
 	return (
 		<Card className="max-w-[400px] my-5">
 			<CardHeader>
 				<Image alt="festival" className="object-cover w-full" src={image} />
 			</CardHeader>
 			<CardBody>
-				<h1 className="font-bold">{name}</h1>
+				<h1 className="font-bold">{title}</h1>
 				<p className="text-sm">{category}</p>
 				<div className="flex text-sm mt-4">
-					{category !== "FILM" ? (
-						<>
-							<div className="flex mr-5 items-center">
-								<MdOutlineDateRange size={20} color="black" />
-								<p className="ml-1">{date}</p>
-							</div>
-							<div className="flex items=center">
-								<MdAccessTime size={20} color="black" />
-								<p className="ml-1">{time}</p>
-							</div>
-						</>
-					) : (
-						<>
-							<div className="flex items=center">
-								<GiSandsOfTime size={20} color="black" />
-								<p className="ml-1">{time}</p>
-							</div>
-						</>
-					)}
+					<div className="flex items=center">
+						<GiSandsOfTime size={20} color="black" />
+						<p className="ml-1">{publishDate}</p>
+					</div>
 				</div>
 				<div className="flex items=center mt-4">
 					<IoEyeOutline size={24} />

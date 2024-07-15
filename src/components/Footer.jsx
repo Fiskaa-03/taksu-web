@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa6";
 const Footer = () => {
 	return (
 		<div className="bg-primary w-full">
-			<div className="mt-20 container w-500 mx-auto py-10 flex justify-between items-start">
+			<div className="mt-20 container w-500 mx-auto py-10 flex lg:flex-row max-md:flex-col justify-between lg:items-start max-md:items-center">
 				<div className="flex flex-col w-44 text-center items-center">
 					<Image
 						src="/assets/logo/Logo-Taksu-Transparent.png"
