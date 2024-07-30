@@ -1,4 +1,4 @@
-const Data = [
+const BlogData = [
 	{
 		id: 1,
 		image: "/assets/blog/tari-kecak.png",
@@ -58,4 +58,4 @@ const Data = [
 	},
 ];
 
-export default Data;
+export default BlogData;

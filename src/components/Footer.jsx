@@ -13,9 +13,9 @@ const Footer = () => {
 						alt="Logo"
 						className="h-48"
 					/>
-					<span>Pesan layanan cepat dan anti ribet</span>
+					<span className="text-white">Pesan layanan cepat dan anti ribet</span>
 				</div>
-				<div className="flex flex-col justify-between items-start h-full">
+				<div className="flex flex-col justify-between items-start h-full text-white">
 					<h3 className="mb-6">Platform Kami</h3>
 					<a className="my-2" href="/#about-us">
 						Tentang Kami
@@ -27,7 +27,7 @@ const Footer = () => {
 						Blog
 					</a>
 				</div>
-				<div className="flex flex-col justify-between h-full">
+				<div className="flex flex-col justify-between h-full text-white">
 					<h3 className="mb-6">Kontak Kami</h3>
 					<div className="flex items-center">
 						<BsTelephone className="mr-2 text-xl" />
@@ -42,7 +42,7 @@ const Footer = () => {
 						</a>
 					</div>
 				</div>
-				<div className="flex flex-col justify-between h-full">
+				<div className="flex flex-col justify-between h-full text-white">
 					<h3 className="mb-6">Media Sosial</h3>
 					<a className="my-2" href="https://www.instagram.com/taksu_id/">
 						<FaInstagram className="text-4xl" />

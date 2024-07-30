@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import { useLocation } from "react-router-dom";
+
 import {
 	Navbar,
 	NavbarBrand,
@@ -19,6 +21,8 @@ import { IoPerson } from "react-icons/io5";
 
 const NavigationBar = () => {
 	const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+	const Location = useLocation();
+
 	const menuItems = ["Beranda", "Tentang kami", "Blog", "Cari Layanan"];
 
 	return (
@@ -35,28 +39,53 @@ const NavigationBar = () => {
 
 			<NavbarContent className="hidden sm:flex gap-20 -ml-16" justify="center">
 				<NavbarItem isActive>
-					<Link href="/">Beranda</Link>
+					<Link
+						href="/"
+						className={
+							Location.pathname === "/"
+								? "text-primary font-bold"
+								: "text-white"
+						}>
+						Beranda
+					</Link>
 				</NavbarItem>
 				<NavbarItem>
-					<Link className="text-white" href="/#about-us">
+					<Link
+						className={
+							Location.pathname.startsWith("/about")
+								? "text-primary font-bold"
+								: "text-white"
+						}
+						href="/#about-us">
 						Tentang Kami
 					</Link>
 				</NavbarItem>
 
 				<NavbarBrand>
-					<a href="#" className="font-bold text-lg text-white">
-						{/* <Image src="/assets/artick.png" alt="Logo" /> */}
+					<a href="/" className="font-bold text-lg text-white">
 						TAKSU
 					</a>
 				</NavbarBrand>
 
 				<NavbarItem>
-					<Link className="text-white" href="/#blog">
+					<Link
+						className={
+							Location.pathname.startsWith("/blog")
+								? "text-primary font-bold"
+								: "text-white"
+						}
+						href="/blog">
 						Blog
 					</Link>
 				</NavbarItem>
 				<NavbarItem>
-					<Link className="text-white" href="/#">
+					<Link
+						className={
+							Location.pathname.startsWith("/service")
+								? "text-primary font-bold"
+								: "text-white"
+						}
+						href="/service">
 						Cari Layanan
 					</Link>
 				</NavbarItem>
@@ -89,11 +118,19 @@ const NavigationBar = () => {
 			</NavbarContent>
 			<NavbarMenu>
 				{menuItems.map((item, index) => (
-					<NavbarMenuItem key={`${item}-${index}`}>
+					<NavbarMenuItem key={`${item}-${index}`} className="mt-8">
 						<Link
-							color={index === 2 ? "primary" : "foreground"}
+							color={"foreground"}
 							className="w-full"
-							href={index === 0 ? "/" : index === 2 ? "/" : "/"}
+							href={
+								index === 0
+									? "/"
+									: index === 1
+									? "/"
+									: index === 2
+									? "/blog"
+									: "/service"
+							}
 							size="lg">
 							{item}
 						</Link>

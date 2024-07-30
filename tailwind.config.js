@@ -12,6 +12,10 @@ export default {
 		extend: {
 			colors: {
 				primary: "#C9B651",
+				white: "#ffffff",
+			},
+			height: {
+				100: "30rem",
 			},
 		},
 	},

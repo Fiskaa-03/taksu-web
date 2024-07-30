@@ -5,13 +5,13 @@ import ScrollAnimation from "react-animate-on-scroll";
 import SectionHeader from "../../components/SectionHeader";
 import GeneralCard from "../../components/GeneralCard";
 import BlogCard from "../../components/BlogCard";
-import Data from "../../Data";
+import BlogData from "../blog/BlogData";
 
 const Home = () => {
 	const [blogs, setBlogs] = useState([]);
 
 	const getBlogs = () => {
-		setBlogs(Data);
+		setBlogs(BlogData);
 	};
 	useEffect(() => {
 		getBlogs();

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Image, link } from "@nextui-org/react";
+import { useParams } from "react-router-dom";
+import { Image } from "@nextui-org/react";
 import BlogBox from "../../components/BlogBox";
-import Data from "../../Data";
+import BlogData from "./BlogData";
 
 const BlogDetail = () => {
 	const { id } = useParams();
@@ -17,11 +17,11 @@ const BlogDetail = () => {
 	const [desc3, setDesc3] = useState();
 
 	const getBlogs = () => {
-		setBlogs(Data);
+		setBlogs(BlogData);
 	};
 
 	const getBlogByID = (id) => {
-		const blog = Data.find((item) => item.id === Number(id));
+		const blog = BlogData.find((item) => item.id === Number(id));
 		setImage(blog.image);
 		setTitle(blog.title);
 		setHeadline1(blog.headline1);

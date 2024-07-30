@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { MdOutlineDateRange, MdAccessTime } from "react-icons/md";
 import { GiSandsOfTime } from "react-icons/gi";
 import { IoEyeOutline } from "react-icons/io5";
 
@@ -16,8 +15,8 @@ import {
 const BlogCard = ({ id, image, title, category, publishDate, visit }) => {
 	return (
 		<Card className="max-w-[400px] my-5">
-			<CardHeader>
-				<Image alt="festival" className="object-cover w-full" src={image} />
+			<CardHeader className="flex justify-center">
+				<Image alt="festival" className="h-[250px] w-[400px]" src={image} />
 			</CardHeader>
 			<CardBody>
 				<h1 className="font-bold">{title}</h1>
