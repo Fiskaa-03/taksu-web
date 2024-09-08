@@ -8,6 +8,7 @@ import BlogList from "./pages/blog/BlogList";
 import ServiceTari from "./pages/service/ServiceTari";
 import ServiceTabuh from "./pages/service/ServiceTabuh";
 import ServicePertunjukan from "./pages/service/ServicePertunjukan";
+import AboutUs from "./pages/aboutUs/AboutUs";
 
 const router = createBrowserRouter([
 	{
@@ -17,6 +18,15 @@ const router = createBrowserRouter([
 			{
 				index: true,
 				element: <Home />,
+			},
+			{
+				path: "about-us",
+				children: [
+					{
+						index: true,
+						element: <AboutUs />,
+					},
+				],
 			},
 			{
 				path: "service",

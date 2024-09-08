@@ -46,8 +46,9 @@ const Home = () => {
 								Selamat Datang di Taksu
 							</h3>
 							<p className="text-xl text-primary mt-6 mb-4">
-								Platform utama untuk merayakan momen berharga dengan sentuhan
-								seni Bali yang autentik.
+								Taksu menawarkan layanan kesenian Bali dengan tetap menjaga
+								tradisi dan aturan yang ada, memastikan setiap pertunjukan
+								disajikan dengan hormat dan autentik
 							</p>
 							<div className={`my-4 w-40 h-1 mx-auto bg-primary rounded`}></div>
 						</div>
@@ -67,8 +68,8 @@ const Home = () => {
 					/>
 					<div className="flex items-center justify-around flex-wrap">
 						<GeneralCard
-							image="./assets/card/search.png"
-							title="Jaringan Sanggar Terbaik"
+							image="./assets/card/networking.png"
+							title="Jaringan Terbaik"
 							description="Memastikan setiap pertunjukan dari penari yang berpengalaman dan berbakat. "
 							color="white"
 						/>
@@ -78,7 +79,7 @@ const Home = () => {
 							<div className="my-4 w-2 h-2 bg-white rounded-xl"></div>
 						</div>
 						<GeneralCard
-							image="./assets/card/search.png"
+							image="./assets/card/personalization.png"
 							title="Personalisasi Acara"
 							description="Menawarkan layanan yang dapat disesuaikan dengan keinginan dan kebutuhan Anda"
 							color="white"
@@ -89,7 +90,7 @@ const Home = () => {
 							<div className="my-4 w-2 h-2 bg-white rounded-xl"></div>
 						</div>
 						<GeneralCard
-							image="./assets/card/search.png"
+							image="./assets/card/easy-access.png"
 							title="Kemudahan Akses"
 							description="Memudahkan anda dalam mengakses informasi dan menghubungi kami"
 							color="white"
@@ -107,7 +108,7 @@ const Home = () => {
 					/>
 					<div className="flex items-center justify-around flex-wrap">
 						<GeneralCard
-							image="./assets/card/cashless.png"
+							image="./assets/card/choose.png"
 							title="Pilih Layanan"
 							description="Pilih beragam layanan yang ingin kamu pesan!"
 							color="primary"
@@ -118,7 +119,7 @@ const Home = () => {
 							<div className="my-4 w-2 h-2 bg-primary rounded-xl"></div>
 						</div>
 						<GeneralCard
-							image="./assets/card/cashless.png"
+							image="./assets/card/discussion.png"
 							title="Diskusi Acara"
 							description="Diskusikan acara yang ingin kamu adakan bersama professional"
 							color="primary"
@@ -129,7 +130,7 @@ const Home = () => {
 							<div className="my-4 w-2 h-2 bg-primary rounded-xl"></div>
 						</div>
 						<GeneralCard
-							image="./assets/card/cashless.png"
+							image="./assets/card/enjoy.png"
 							title="Nikmati Pertunjukan"
 							description="Kami akan mempersiapkan layanan dan anda tinggal menyaksikannya"
 							color="primary"

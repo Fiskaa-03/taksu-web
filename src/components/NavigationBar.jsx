@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useLocation } from "react-router-dom";
-
+import Login from "../pages/auth/Login";
 import {
 	Navbar,
 	NavbarBrand,
@@ -52,11 +52,11 @@ const NavigationBar = () => {
 				<NavbarItem>
 					<Link
 						className={
-							Location.pathname.startsWith("/about")
+							Location.pathname.startsWith("/about-us")
 								? "text-primary font-bold"
 								: "text-white"
 						}
-						href="/#about-us">
+						href="/about-us">
 						Tentang Kami
 					</Link>
 				</NavbarItem>
@@ -100,12 +100,8 @@ const NavigationBar = () => {
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent>
-							<div className="px-1 py-2">
-								<div className="mb-4">
-									<a href="#" className="text-small font-bold">
-										Masuk
-									</a>
-								</div>
+							<div className="py-2">
+								<Login />
 								<div>
 									<a href="#" className="text-small">
 										Daftar
