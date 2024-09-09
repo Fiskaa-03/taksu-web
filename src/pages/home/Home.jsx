@@ -21,19 +21,21 @@ const Home = () => {
 		<div>
 			<div className={classes.banner}>
 				<div className="mx-auto max-w-6xl py-32 sm:py-48 lg:py-56">
-					<div className="text-center">
-						<h1 className="text-5xl font-bold tracking-tight text-white">
-							Jelajahi keindahan dan kekayaan budaya Bali melalui karya seni
-							yang menakjubkan
-						</h1>
-						<div className="mt-10 flex items-center justify-center gap-x-6">
-							<a
-								href="#start"
-								className="rounded-2xl bg-white px-12 py-2.5 text-sm font-semibold text-primary shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-								Mulai Berkunjung
-							</a>
+					<ScrollAnimation animateIn="fadeIn">
+						<div className="text-center">
+							<h1 className="text-5xl font-bold tracking-tight text-white">
+								Jelajahi keindahan dan kekayaan budaya Bali melalui karya seni
+								yang menakjubkan
+							</h1>
+							<div className="mt-10 flex items-center justify-center gap-x-6">
+								<a
+									href="#start"
+									className="rounded-2xl bg-white px-12 py-2.5 text-sm font-semibold text-primary shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+									Mulai Berkunjung
+								</a>
+							</div>
 						</div>
-					</div>
+					</ScrollAnimation>
 				</div>
 			</div>
 
