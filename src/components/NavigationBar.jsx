@@ -122,7 +122,7 @@ const NavigationBar = () => {
 								index === 0
 									? "/"
 									: index === 1
-									? "/"
+									? "/about-us"
 									: index === 2
 									? "/blog"
 									: "/service"
